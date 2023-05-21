@@ -17,6 +17,10 @@ class ToDoService{
         const deleted = await ToDoModel.findByIdAndDelete({_id:id})
         return deleted;
    }
+   static async updateToDo(id,title,desc){
+     const deleted = await ToDoModel.updateOne({_id:id},{title:title,description:desc})
+     return deleted;
+}
 }
 
 module.exports = ToDoService;

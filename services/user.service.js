@@ -33,6 +33,11 @@ class UserServices{
     static async generateAccessToken(tokenData,JWTSecret_Key,JWT_EXPIRE){
         return jwt.sign(tokenData, JWTSecret_Key, { expiresIn: JWT_EXPIRE });
     }
+
+    static async updateUser(id,name,avatar){
+        const deleted = await UserModel.updateOne({_id:id},{name:name,avatar:avatar})
+        return deleted;
+   }
 }
 
 module.exports = UserServices;

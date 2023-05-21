@@ -51,3 +51,14 @@ exports.login = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.updateUser =  async (req,res,next)=>{
+    try {
+        const { id,name,avatar } = req.body;
+        let deletedData = await UserServices.updateUser(id,name,avatar);
+        res.json({status: true,success:deletedData});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}

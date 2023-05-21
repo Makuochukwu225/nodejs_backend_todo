@@ -32,3 +32,14 @@ exports.deleteToDo =  async (req,res,next)=>{
         next(error);
     }
 }
+
+exports.updateToDo =  async (req,res,next)=>{
+    try {
+        const { id,title,desc } = req.body;
+        let deletedData = await ToDoService.updateToDo(id,title,desc);
+        res.json({status: true,success:deletedData});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
