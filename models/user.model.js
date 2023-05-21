@@ -51,5 +51,5 @@ userSchema.methods.comparePassword = async function (candidatePassword) {
     }
 };
 
-const UserModel = db.model('todo/user',userSchema);
+const UserModel = db.model('user',userSchema);
 module.exports = UserModel;
