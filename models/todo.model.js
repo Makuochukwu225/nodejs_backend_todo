@@ -18,5 +18,5 @@ const toDoSchema = new Schema({
     },
 },{timestamps:true});
 
-const ToDoModel = db.model('todo',toDoSchema);
+const ToDoModel = db.model('todo/todo',toDoSchema);
 module.exports = ToDoModel;
